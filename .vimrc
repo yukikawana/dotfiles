@@ -36,6 +36,7 @@ syntax on
 set number
 colorscheme molokai 
 IndentGuidesEnable
+set t_Co=256
 "let g:indent_guides_start_level = 1
 set autoindent
 set smartindent
