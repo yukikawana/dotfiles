@@ -6,7 +6,6 @@ endif
 augroup MyAutoCmd
   autocmd!
 augroup END
-
 " dein settings {{{
 " dein自体の自動インストール
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.vim') : $XDG_CACHE_HOME
@@ -31,13 +30,15 @@ endif
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
-" }}}
+" }}} 
 syntax on
 set number
 colorscheme molokai 
 set t_Co=256
-IndentGuidesEnable
-"let g:indent_guides_start_level = 1
+"IndentGuidesEnable
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_start_level = 1
 set autoindent
 set smartindent
 
@@ -115,3 +116,8 @@ nnoremap <C-l> <C-w>l
 cmap w!! w !sudo tee > /dev/null %
 "set mouse=a
 "set ttymouse=xterm2
+
+set ts=4 sw=4 et
+"set expandtab
+"set tabstop=2
+"set shiftwidth=2
